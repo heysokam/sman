@@ -12,39 +12,52 @@ import {
   NavigationMenuViewport,
 } from "@/elements/ui/navigation-menu";
 import { Button } from "@/elements/ui/button";
-import { ListItem } from "./elements/ui/list-item";
+import { ListItem } from "@/elements/ui/list-item";
 
 function SleepMan() {
   const [count, setCount] = React.useState(0);
 
   return (
     <React.Fragment>
-      <NavigationMenu className="flex-col bg-slate-400">
-        <NavigationMenuList>
-          <ListItem href="/docs" title="Introduction">
-            Re-usable components built using Radix UI and Tailwind CSS.
-          </ListItem>
-          <ListItem href="/docs/installation" title="Installation">
-            How to install dependencies and structure your app.
-          </ListItem>
-          <ListItem href="/docs/primitives/typography" title="Typography">
-            Styles for headings, paragraphs, lists...etc
-          </ListItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-
-      <nav className="flex flex-col bg-slate-900 w-auto p-2">
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </nav>
-      <div>
-        <Button onClick={() => setCount((c) => c + 1)}>
-          Click me. count is {count}
-        </Button>
+      <div className="grid bg-slate-200 w-full h-full gap-3 pr-4">
+        <NavigationMenu className="flex flex-col bg-slate-400 w-400px">
+          <NavigationMenuList>
+            <ul className="flex flex-col">
+              <ListItem href="/docs" title="Introduction">
+                <a
+                  href="https://vitejs.dev"
+                  target="_blank"
+                  className="flex flex-row"
+                >
+                  <img src={viteLogo} className="logo" alt="Vite logo" />
+                  Re-usable components
+                </a>
+              </ListItem>
+              <ListItem href="/docs/installation" title="Installation">
+                <a
+                  href="https://react.dev"
+                  target="_blank"
+                  className="flex flex-row"
+                >
+                  <img
+                    src={reactLogo}
+                    alt="React logo"
+                    className="logo react"
+                  />
+                  Install dependencies.
+                </a>
+              </ListItem>
+              <ListItem href="/docs/primitives/typography" title="Typography">
+                Styles for headings
+              </ListItem>
+            </ul>
+          </NavigationMenuList>
+        </NavigationMenu>
+        <div>
+          <Button onClick={() => setCount((c) => c + 1)}>
+            Click me. count is {count}
+          </Button>
+        </div>
       </div>
     </React.Fragment>
   );
