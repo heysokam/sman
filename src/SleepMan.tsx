@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './SleepMan.css'
-import { Button } from './C/ui/button'
+import { Button } from './elements/ui/button'
 
 function SleepMan() {
   const [count, setCount] = useState(0)
