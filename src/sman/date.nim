@@ -1,10 +1,11 @@
-# std dependencies
+## @license GPLv3 @author heysokam
+## @fileoverview List of useful dates (ergonomics)
+#__________________________________________________|
+# @dependencies std
 import std/times
-# External dependencies
+# @dependencies External
 import pkg/chrono
-# sman dependencies
-import ./time
 
-template today *() :string= formatIso parseIsoTs($times.now())
-template yesterday *() :string= formatIso parseIsoTs( $(times.now()-1.days) )
-template tomorrow *() :string= formatIso parseIsoTs( $(times.now()+1.days) )
+let today     *:string= chrono.formatIso chrono.parseIsoTs( $times.now() )
+let yesterday *:string= chrono.formatIso chrono.parseIsoTs( $(times.now()-times.days(1)) )
+let tomorrow  *:string= chrono.formatIso chrono.parseIsoTs( $(times.now()+times.days(1)) )

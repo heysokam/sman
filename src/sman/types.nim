@@ -1,6 +1,5 @@
+## @license GPLv3 @author heysokam
+## @fileoverview General type declarations for the Manager
+#__________________________________________________________|
+# @dependencies std
 import std/times
-
-type TimeZoneKind * = enum LA, NA, N24
-type TimeZone = object
-  kind  *:TimeZoneKind
-  shift *:times.Duration
